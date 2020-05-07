@@ -312,17 +312,22 @@ void ConnectionRejected(RPCParameters *rpcParams)
 	}
 	else if(byteRejectReason==REJECT_REASON_BAD_NICKNAME)
 	{
-		char szNewNick[24], randgen[2];
+		char szNewNick[24], randgen[1];
 
 		iGettingNewName = true;
 
-		gen_random(randgen, 2);
+		gen_random(randgen, 1);
 		sprintf(szNewNick, "%s_%s", g_szNickName, randgen);
 
 		Log("[RAKSAMP] Bad nickname. Changing name to %s", szNewNick);
 
 		strcpy(g_szNickName, szNewNick);
-		resetPools(1, 0);
+
+		if (settings.autorecon)
+		{
+			Log("[RAKSAMP] Reconnecting...");
+			resetPools(1, 0);
+		}
 	}
 	else if(byteRejectReason==REJECT_REASON_BAD_MOD)
 	{
