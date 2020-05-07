@@ -52,6 +52,8 @@ int LoadSettings()
 		// get client version
 		strcpy(settings.szClientVersion, (char *)rakSAMPElement->Attribute("clientversion"));
 
+		rakSAMPElement->QueryIntAttribute("autoreconnect", (int*)&settings.autorecon);
+
 		// get chat color
 		rakSAMPElement->QueryColorAttribute("chatcolor_rgb",
 			(unsigned char *)&settings.bChatColorRed, (unsigned char *)&settings.bChatColorGreen, (unsigned char *)&settings.bChatColorBlue);

@@ -101,6 +101,8 @@ struct stSettings
 	unsigned char bCPAlertGreen;
 	unsigned char bCPAlertBlue;
 
+	int autorecon;
+
 	int autoauth;
 	int autoauth_delaycmd;
 	char autoauth_register[64];

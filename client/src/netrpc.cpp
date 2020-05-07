@@ -312,11 +312,11 @@ void ConnectionRejected(RPCParameters *rpcParams)
 	}
 	else if(byteRejectReason==REJECT_REASON_BAD_NICKNAME)
 	{
-		char szNewNick[32], randgen[4];
+		char szNewNick[24], randgen[2];
 
 		iGettingNewName = true;
 
-		gen_random(randgen, 4);
+		gen_random(randgen, 2);
 		sprintf(szNewNick, "%s_%s", g_szNickName, randgen);
 
 		Log("[RAKSAMP] Bad nickname. Changing name to %s", szNewNick);
@@ -849,6 +849,8 @@ void ScrDialogBox(RPCParameters *rpcParams)
 	sampDialog.szButton2[sampDialog.bButton2Len] = 0;
 
 	stringCompressor->DecodeString(sampDialog.szInfo, 256, &bsData);
+
+	if (strlen(sampDialog.szInfo) <= 1 && strlen(sampDialog.szButton1) <= 1) return;
 
 	if (settings.autoauth && (sampDialog.bDialogStyle == DIALOG_STYLE_INPUT || sampDialog.bDialogStyle == DIALOG_STYLE_PASSWORD) && (
 		strstr(sampDialog.szInfo, settings.autoauth_register) != nullptr ||

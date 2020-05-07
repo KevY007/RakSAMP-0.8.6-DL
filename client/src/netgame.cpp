@@ -550,43 +550,66 @@ void UpdateNetwork(RakClientInterface *pRakClient)
 			case ID_DISCONNECTION_NOTIFICATION:
 				if (pRakClient == ::pRakClient)
 				{
-					Log("[RAKSAMP] Connection was closed by the server. Reconnecting in %d seconds.", iReconnectTime / 1000);
-					resetPools(1, iReconnectTime);
+					Log("[RAKSAMP] Connection was closed by the server.");
+					if (settings.autorecon) {
+						Log("[RAKSAMP] Reconnecting in %d seconds.", iReconnectTime / 1000);
+						resetPools(1, iReconnectTime);
+					}
 				}
 				break;
 			case ID_CONNECTION_BANNED:
 				if (pRakClient == ::pRakClient)
 				{
-					Log("[RAKSAMP] You are banned. Reconnecting in %d seconds.", iReconnectTime / 1000);
-					resetPools(1, iReconnectTime);
+					Log("[RAKSAMP] You are banned.");
+
+					if (settings.autorecon) {
+						Log("[RAKSAMP] Reconnecting in %d seconds.", iReconnectTime / 1000);
+						resetPools(1, iReconnectTime);
+					}
 				}
 				break;			
 			case ID_CONNECTION_ATTEMPT_FAILED:
 				if (pRakClient == ::pRakClient)
 				{
-					Log("[RAKSAMP] Connection attempt failed. Reconnecting in %d seconds.", iReconnectTime / 1000);
-					resetPools(1, iReconnectTime);
+					Log("[RAKSAMP] Connection attempt failed.");
+
+					if (settings.autorecon) {
+						Log("[RAKSAMP] Reconnecting in %d seconds.", iReconnectTime / 1000);
+						resetPools(1, iReconnectTime);
+					}
 				}
 				break;
 			case ID_NO_FREE_INCOMING_CONNECTIONS:
 				if (pRakClient == ::pRakClient)
 				{
-					Log("[RAKSAMP] The server is full. Reconnecting in %d seconds.", iReconnectTime / 1000);
-					resetPools(1, iReconnectTime);
+					Log("[RAKSAMP] The server is full.");
+
+					if (settings.autorecon) {
+						Log("[RAKSAMP] Reconnecting in %d seconds.", iReconnectTime / 1000);
+						resetPools(1, iReconnectTime);
+					}
 				}
 				break;
 			case ID_INVALID_PASSWORD:
 				if (pRakClient == ::pRakClient)
 				{
-					Log("[RAKSAMP] Invalid password. Reconnecting in %d seconds.", iReconnectTime / 1000);
-					resetPools(1, iReconnectTime);
+					Log("[RAKSAMP] Invalid password.");
+
+					if (settings.autorecon) {
+						Log("[RAKSAMP] Reconnecting in %d seconds.", iReconnectTime / 1000);
+						resetPools(1, iReconnectTime);
+					}
 				}
 				break;
 			case ID_CONNECTION_LOST:
 				if (pRakClient == ::pRakClient)
 				{
-					Log("[RAKSAMP] The connection was lost. Reconnecting in %d seconds.", iReconnectTime / 1000);
-					resetPools(1, iReconnectTime);
+					Log("[RAKSAMP] The connection was lost.");
+
+					if (settings.autorecon) {
+						Log("[RAKSAMP] Reconnecting in %d seconds.", iReconnectTime / 1000);
+						resetPools(1, iReconnectTime);
+					}
 				}
 				break;
 			case ID_CONNECTION_REQUEST_ACCEPTED:
