@@ -4,3 +4,5 @@
 client/bin/RakSAMPClient.xml
 client/bin/RakSAMPClient.log
 client/bin/RakSAMPClient.xml
+client/src/obj/Release/localplayer.obj
+*.obj

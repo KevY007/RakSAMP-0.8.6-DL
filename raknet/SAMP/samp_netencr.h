@@ -1,5 +1,5 @@
 /*
-	Updated to 0.3.7 by P3ti
+	Updated to 0.3.DL by KevY
 */
 
 char *DumpMem(unsigned char *pAddr, int len);

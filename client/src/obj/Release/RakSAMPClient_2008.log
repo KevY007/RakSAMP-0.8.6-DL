@@ -1,60 +1,11 @@
 ﻿  common.cpp
-  AsynchronousFileIO.cpp
-  BitStream.cpp
-  BitStream_NoTemplate.cpp
-  CheckSum.cpp
-  DataBlockEncryptor.cpp
-  DataCompressor.cpp
-  DS_ByteQueue.cpp
-  DS_HuffmanEncodingTree.cpp
-  DS_Table.cpp
-  EncodeClassName.cpp
-  GetTime.cpp
-  InternalPacketPool.cpp
-  LinuxStrings.cpp
-  NetworkIDGenerator.cpp
-  NetworkTypes.cpp
-E:\Github\RakSAMP-0.8.6-DL\raknet\NetworkTypes.cpp(112,14): warning C4996: 'inet_ntoa': Use inet_ntop() or InetNtop() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
-E:\Github\RakSAMP-0.8.6-DL\raknet\NetworkTypes.cpp(131,16): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
-  PluginInterface.cpp
   RakClient.cpp
-  RakNetStatistics.cpp
-  RakNetworkFactory.cpp
-  Generating Code...
-  Compiling...
   RakPeer.cpp
   -- RakNet: _RAKNET_THREADSAFE not defined.  Do NOT use multiple threads on the same instance of RakPeer (Fast!). --
-  rakserver.cpp
-  RakSleep.cpp
-  Rand.cpp
   ReliabilityLayer.cpp
-  rijndael.cpp
-  RPCMap.cpp
   SAMPRPC.cpp
-  samp_auth.cpp
   samp_netencr.cpp
-  SHA1.cpp
-  SimpleMutex.cpp
   SocketLayer.cpp
-  StringCompressor.cpp
-  StringTable.cpp
-  SystemAddressList.cpp
-  TableSerializer.cpp
-  _findfirst.cpp
-  tinystr.cpp
-  tinyxml.cpp
-E:\Github\RakSAMP-0.8.6-DL\tinyxml\tinyxml.cpp(1242,36): warning C4477: 'sscanf_s' : format string '%p' requires an argument of type 'void **', but variadic argument 1 has type 'void *'
-E:\Github\RakSAMP-0.8.6-DL\tinyxml\tinyxml.cpp(1244,36): warning C4477: 'sscanf_s' : format string '%p' requires an argument of type 'void **', but variadic argument 1 has type 'void *'
-E:\Github\RakSAMP-0.8.6-DL\tinyxml\tinyxml.cpp(1250,36): warning C4477: 'sscanf_s' : format string '%u' requires an argument of type 'unsigned int *', but variadic argument 1 has type 'unsigned char *'
-E:\Github\RakSAMP-0.8.6-DL\tinyxml\tinyxml.cpp(1250,36): message : consider using '%hhu' in the format string
-E:\Github\RakSAMP-0.8.6-DL\tinyxml\tinyxml.cpp(1250,36): warning C4477: 'sscanf_s' : format string '%u' requires an argument of type 'unsigned int *', but variadic argument 2 has type 'unsigned char *'
-E:\Github\RakSAMP-0.8.6-DL\tinyxml\tinyxml.cpp(1250,36): message : consider using '%hhu' in the format string
-E:\Github\RakSAMP-0.8.6-DL\tinyxml\tinyxml.cpp(1250,36): warning C4477: 'sscanf_s' : format string '%u' requires an argument of type 'unsigned int *', but variadic argument 3 has type 'unsigned char *'
-E:\Github\RakSAMP-0.8.6-DL\tinyxml\tinyxml.cpp(1250,36): message : consider using '%hhu' in the format string
-  Generating Code...
-  Compiling...
-  tinyxmlerror.cpp
-  tinyxmlparser.cpp
   cmds.cpp
   console.cpp
   localplayer.cpp

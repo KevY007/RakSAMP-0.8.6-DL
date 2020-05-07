@@ -3983,8 +3983,8 @@ void ProcessNetworkPacket( const unsigned int binaryAddress, const unsigned shor
 
 	}
 
-	else if ((unsigned char)(data)[0] == ID_OPEN_CONNECTION_COOKIE && length == sizeof(unsigned char)*2+1) // 0.3.7 RAKSAMP HACK PONPON
-	{
+	else if ((unsigned char)(data)[0] == ID_OPEN_CONNECTION_COOKIE && length == sizeof(unsigned char)*2+1) // 0.3.7 RAKSAMP HACK PONPON, holy shit kalcor good update 0.3.dl
+	{ // all works
 		for (i=0; i < rakPeer->messageHandlerList.Size(); i++)
 			rakPeer->messageHandlerList[i]->OnDirectSocketReceive(data, length*8, playerId);
 

@@ -1,5 +1,5 @@
 /*
-	Updated to 0.3.7 by P3ti
+	Updated to 0.3.DL by KevY
 */
 
 // MAIN STUFF /////////////////////////////
@@ -8,12 +8,12 @@
 
 #include "SAMP_VER.h"
 
-#define RAKSAMP_VERSION "v0.8.6-0.3.7"
+#define RAKSAMP_VERSION "v0.8.6-0.3.DL"
 
 #define NETCODE_CONNCOOKIELULZ 0x6969
-#define NETGAME_VERSION 4057
+#define NETGAME_VERSION 4062
 
-#define AUTHOR "jlfm, bartekdvd, P3ti"
+#define AUTHOR "jlfm, bartekdvd, P3ti (Updated by KevY/0x32789)"
 
 #define REJECT_REASON_BAD_VERSION	1
 #define REJECT_REASON_BAD_NICKNAME	2
