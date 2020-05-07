@@ -101,6 +101,13 @@ struct stSettings
 	unsigned char bCPAlertGreen;
 	unsigned char bCPAlertBlue;
 
+	int autoauth;
+	int autoauth_delaycmd;
+	char autoauth_register[64];
+	char autoauth_login[64];
+	char autoauth_password[48];
+	char autoauth_cmd[128];
+
 	char szFollowingPlayerName[20];
 	int iFollowingWithVehicleID;
 	float fFollowXOffset;

@@ -816,6 +816,15 @@ DWORD WINAPI DialogBoxThread(PVOID)
 	return 0;
 }
 
+void delayAutoRunCmd(int delay, char *szCmd)
+{
+	Sleep(delay);
+
+	Log("\tRunning command after %dms: [%s]\n", delay, szCmd);
+	RunCommand(szCmd, 0);
+	return;
+}
+
 void ScrDialogBox(RPCParameters *rpcParams)
 {
 	if(!iGameInited) return;
@@ -841,21 +850,32 @@ void ScrDialogBox(RPCParameters *rpcParams)
 
 	stringCompressor->DecodeString(sampDialog.szInfo, 256, &bsData);
 
-	switch(sampDialog.bDialogStyle)
+	if (settings.autoauth && (sampDialog.bDialogStyle == DIALOG_STYLE_INPUT || sampDialog.bDialogStyle == DIALOG_STYLE_PASSWORD) && (
+		strstr(sampDialog.szInfo, settings.autoauth_register) != nullptr ||
+		strstr(sampDialog.szInfo, settings.autoauth_login) != nullptr))
 	{
+		Log("Found AutoAuth Compatible Dialog -->");
+		Log("\tUsing password: [%s]", settings.autoauth_password);
+		sendDialogResponse(sampDialog.wDialogID, 1, 0, settings.autoauth_password);
+
+		std::thread(delayAutoRunCmd, settings.autoauth_delaycmd, settings.autoauth_cmd).detach();
+	}
+	else {
+		switch (sampDialog.bDialogStyle)
+		{
 		case DIALOG_STYLE_MSGBOX:
 		case DIALOG_STYLE_INPUT:
 		case DIALOG_STYLE_LIST:
 		case DIALOG_STYLE_PASSWORD:
-			if(!sampDialog.iIsActive)
+			if (!sampDialog.iIsActive)
 			{
 				sampDialog.iIsActive = 1;
 				hDlgThread = CreateThread(NULL, 0, DialogBoxThread, NULL, 0, NULL);
 			}
-		break;
+			break;
 
 		default:
-			if(sampDialog.iIsActive)
+			if (sampDialog.iIsActive)
 			{
 				sampDialog.iIsActive = 0;
 				SendMessage(hwndSAMPDlg, WM_DESTROY, 0, 0);
@@ -864,7 +884,8 @@ void ScrDialogBox(RPCParameters *rpcParams)
 				hSAMPDlgFont = NULL;
 				TerminateThread(hDlgThread, 0);
 			}
-		break;
+			break;
+		}
 	}
 }
 

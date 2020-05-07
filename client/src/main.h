@@ -8,6 +8,7 @@
 #include <windows.h>
 #include <time.h>
 #include <iostream>
+#include <thread>
 #include "../../common/common.h"
 
 // window stuff

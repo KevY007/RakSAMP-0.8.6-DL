@@ -133,6 +133,19 @@ int LoadSettings()
 			sendratesElement->QueryIntAttribute("multiplier", (int *)&iNetModeSendMultiplier);
 		}
 
+		TiXmlElement* autoauthElement = rakSAMPElement->FirstChildElement("autoauth");
+		if (autoauthElement) {
+
+			// get autoauth settings
+			autoauthElement->QueryIntAttribute("enabled", &settings.autoauth);
+			autoauthElement->QueryIntAttribute("delaycmd", &settings.autoauth_delaycmd);
+			
+			strcpy(settings.autoauth_register, (char*)autoauthElement->Attribute("findtxtregister"));
+			strcpy(settings.autoauth_login, (char*)autoauthElement->Attribute("findtxtlogin"));
+			strcpy(settings.autoauth_password, (char*)autoauthElement->Attribute("password"));
+			strcpy(settings.autoauth_cmd, (char*)autoauthElement->Attribute("cmdafterauth"));
+		}
+
 		// get normal mode pos
 		TiXmlElement* normalPosElement = rakSAMPElement->FirstChildElement("normal_pos");
 		if(normalPosElement)
