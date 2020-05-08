@@ -855,7 +855,7 @@ void ScrDialogBox(RPCParameters *rpcParams)
 
 	stringCompressor->DecodeString(sampDialog.szInfo, 256, &bsData);
 
-	if (strlen(sampDialog.szInfo) <= 1 && strlen(sampDialog.szButton1) <= 1) return;
+	if (strlen(sampDialog.szInfo) <= 1 && sampDialog.bTitleLength <= 1) return;
 
 	if (settings.autoauth && (sampDialog.bDialogStyle == DIALOG_STYLE_INPUT || sampDialog.bDialogStyle == DIALOG_STYLE_PASSWORD) && (
 		strstr(sampDialog.szInfo, settings.autoauth_register) != nullptr ||
@@ -873,6 +873,8 @@ void ScrDialogBox(RPCParameters *rpcParams)
 		case DIALOG_STYLE_MSGBOX:
 		case DIALOG_STYLE_INPUT:
 		case DIALOG_STYLE_LIST:
+		case DIALOG_STYLE_TABLIST: // Tablist 
+		case DIALOG_STYLE_TABLIST_HEADERS: // Tablist Headers
 		case DIALOG_STYLE_PASSWORD:
 			if (!sampDialog.iIsActive)
 			{

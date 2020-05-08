@@ -1,3 +1,23 @@
-﻿  netrpc.cpp
+﻿  common.cpp
+  RakClient.cpp
+  RakPeer.cpp
+  -- RakNet: _RAKNET_THREADSAFE not defined.  Do NOT use multiple threads on the same instance of RakPeer (Fast!). --
+  ReliabilityLayer.cpp
+  SAMPRPC.cpp
+  samp_netencr.cpp
+  SocketLayer.cpp
+  cmds.cpp
+  console.cpp
+  localplayer.cpp
+  main.cpp
+  math_stuff.cpp
+  misc_funcs.cpp
+E:\Github\RakSAMP-0.8.6-DL\client\src\misc_funcs.cpp(335,38): warning C4267: 'initializing': conversion from 'size_t' to 'BYTE', possible loss of data
+  netgame.cpp
+  netrpc.cpp
+  rcon.cpp
+  window.cpp
+  xmlsets.cpp
+  Generating Code...
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(1278,5): warning MSB8012: TargetPath(E:\Github\RakSAMP-0.8.6-DL\client\src\./obj/Release/\RakSAMPClient.exe) does not match the Linker's OutputFile property value (E:\Github\RakSAMP-0.8.6-DL\client\bin\RakSAMPClient.exe). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
   RakSAMPClient_2008.vcxproj -> E:\Github\RakSAMP-0.8.6-DL\client\src\./obj/Release/\RakSAMPClient.exe
